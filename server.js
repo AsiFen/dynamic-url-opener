@@ -1,12 +1,11 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const port = 3000; 
+const port = 3000;
 
-app.get('/openfile', (req, res) => {
-    const fileUrl = req.query.fileUrl;
+app.get("/openfile", (req, res) => {
+  const fileUrl = req.query.url;
 
-    
-    res.send(`
+  res.send(`
         <!DOCTYPE html>
         <html>
         <head>
@@ -15,7 +14,7 @@ app.get('/openfile', (req, res) => {
         <body>
             <script>
                 const fileUrl = ${JSON.stringify(fileUrl)};
-                window.open(fileUrl, '_blank'); 
+                   window.open(fileUrl); 
             </script>
         </body>
         </html>
@@ -23,5 +22,5 @@ app.get('/openfile', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
