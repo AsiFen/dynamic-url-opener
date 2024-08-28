@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+//need to create a route for it /openfile
+
+//inorder to access the path /openfile 
 
 app.get("/openfile", (req, res) => {
   const fileUrl = req.query.url;
