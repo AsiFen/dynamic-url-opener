@@ -1,14 +1,14 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 5001;
 //need to create a route for it /openfile
 
 //inorder to access the path /openfile 
 
 app.get("/openfile", (req, res) => {
-  const fileUrl = req.query.url;
+    const fileUrl = req.query.url;
 
-  res.send(`
+    res.send(`
         <!DOCTYPE html>
         <html>
         <head>
@@ -17,7 +17,8 @@ app.get("/openfile", (req, res) => {
         <body>
             <script>
                 const fileUrl = ${JSON.stringify(fileUrl)};
-                   window.open(fileUrl); 
+                console.log('Opening URL:', fileUrl); // Debugging line
+                window.open(fileUrl); 
             </script>
         </body>
         </html>
@@ -25,5 +26,5 @@ app.get("/openfile", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });
